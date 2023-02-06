@@ -36,7 +36,7 @@ function update() {
     orient = 2;
   }
   
-  let wayfinding_inst = "";
+  var wayfinding_inst = "";
   
   if(getMarker(0).present){
     for (let i=0; i< curDir.length; i++){
