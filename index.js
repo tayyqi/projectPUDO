@@ -23,8 +23,8 @@ function update() {
   }
   
   //IN PROGRESS, based on orientation, direction of wayfinding changes
-  let theta = getMarker(0).rotation;
-  let orient = 0;
+  var theta = getMarker(0).rotation;
+  var orient = 0;
   
   if (theta >= -0.25*Math.PI && theta < 0.25*Math.PI){
     orient = 0;
@@ -40,7 +40,7 @@ function update() {
   
   if(getMarker(0).present){
     for (let i=0; i< curDir.length; i++){
-    let nuVal = (curDir[i] + orient);
+    var nuVal = (curDir[i] + orient);
     
     while(nuVal<0){
         nuVal += 4;
