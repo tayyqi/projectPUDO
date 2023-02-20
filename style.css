@@ -1,118 +1,131 @@
-/* CSS files add styling rules to your content */
-
-html {
-  margin: 0;
-  padding: 0;
-  font-family: monospace;
-  font-size: 12px;
-  color: black;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: url(
-    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAALklEQVQYV03LwQkAQAwCQVOtNW21ORIIp8/BLaAVs61KHAA+Hky0z4RFST1J7gFz9hgtYH4SQAAAAABJRU5ErkJggg==
-  ) repeat;
-}
-
-p {
-  font-size: 16px;
-}
-
-#detectionDiv {
-  position: absolute;
-  top: 0;
-  left: -110vw;
-  transition: all 500ms ease-in-out;
-  z-index: 999;
-}
-
-#detectionDiv.active {
-  top: 0;
-  left: 0;
-}
-
-#detectionDiv #detection-canvas {
-  position: relative;
-  float: left;
-  clear: both;
-  border-radius: 0 0 0.5em 0;
-  border-bottom: 4px solid #FFF;
-}
-
-#detectionDiv #detection-canvas-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 0 0 0.5em 0;
-}
-
-#detectionDiv #parametersMenu {
-  position: relative;
-  float: left;
-  clear: both;
-  margin: 1em 0 1em 0em;
-  padding: 1em 1.5em 1em 1.5em;
-  background: black;
-  border-radius: 0 0.5em 0.5em 0;
-  border-bottom: 4px solid #FFF;
-}
-
-#detectionDiv #parametersMenu .parameterItem {
-  position: relative;
-  float: left;
-  clear: both;
-  margin: 0.25em 0 0.25em 0;
-}
-
-#detectionDiv #parametersMenu .parameterItem span {
-  position: relative;
-  float: left;
-  width: 18em;
-  font-weight: 600;
-  color: white;
-}
-
-#toggleScreen {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background: #000;
-  z-index: 9999;
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
-  padding: 6px;
-  border-radius: 0 0 50px 0;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  cursor: pointer;
-  transition: all 100ms ease-in;
 }
 
-#toggleScreen:hover, #toggleScreen:active {
-  padding: 6px 0 0 0;
-}
-
-
-
-/* styles for #app */
-
-#app {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  background-color: #ffffff;
-}
-
-#app #app-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
   
+  border: 0 none;
+    
+  -webkit-transition: all ease .4s;
+  -moz-transition: all ease .4s;
+    transition: all ease .4s;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+    
+  background: RGBA(0, 58, 97, 1);
+    
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  padding-top: 40px;
+    
+  color: #ccc;
+  text-align: center;
+  font-size: 1.8rem;
+     
+    text-shadow: rgba(0,0,0,0.6) 1px 0, rgba(0,0,0,0.6) 1px 0, rgba(0,0,0,0.6) 0 1px, rgba(0,0,0,0.6) 0 1px;
+}
+
+.nav {
+  margin: 20px auto;
+  width: 455px;
+  min-height: auto;
+}
+
+.nav ul {
+  position: relative;
+  padding-top: 20px; 
+}
+
+.nav li {
+  position: relative;
+  padding: 20px 3px 0 3px; 
+  float: left; 
+  
+  text-align: center;
+  list-style-type: none; 
+}
+
+.nav li::before, .nav li::after{
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%;
+  width: 50%; 
+  height: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.nav li::after{
+  left: 50%;
+  right: auto; 
+  
+  border-left: 1px solid #ccc;
+}
+
+.nav li:only-child::after, .nav li:only-child::before {
+  content: '';
+  display: none;
+}
+
+.nav li:only-child{ padding-top: 0;}
+.nav li:first-child::before, .nav li:last-child::after{
+  border: 0 none;
+}
+
+.nav li:last-child::before{
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+}
+
+.nav li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+.nav ul ul::before{
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0; 
+  height: 20px;
+}
+
+.nav li a{
+  display: inline-block;
+  padding: 5px 10px;
+  
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ccc;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+}
+
+.nav li a:hover, .nav li a:hover+ul li a {
+  color: #000;
+  background: #c8e4f8;   
+  border: 1px solid #94a0b4;
+}
+
+.nav li a:hover+ul li::after, 
+.nav li a:hover+ul li::before, 
+.nav li a:hover+ul::before, 
+.nav li a:hover+ul ul::before{
+  content: '';
+  border-color: #94a0b4;
 }
